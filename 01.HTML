@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radar Pixel - Notícias de Games</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* CSS customizado para a transição do carrossel */
+        .carousel-item {
+            display: none; /* Esconde todos os slides por padrão */
+            transition: opacity 0.7s ease-in-out;
+            will-change: opacity;
+        }
+        .carousel-item.active {
+            display: block; /* Mostra o slide ativo */
+        }
+        /* Estilo para os parágrafos dentro do modal */
+        #modalContent p {
+            margin-bottom: 1rem; /* Adiciona espaço entre os parágrafos */
+        }
+    </style>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+
+    <header class="bg-white dark:bg-gray-800 shadow-md">
+        <nav class="container mx-auto px-6 py-4">
+            <h1 class="text-3xl font-bold text-blue-600 dark:text-blue-400">
+                Radar Pixel
+            </h1>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-8">
+
+        <section class="mb-8">
+            <h2 class="text-2xl font-bold mb-4">Principais Notícias</h2>
+            <div id="carousel" class="relative w-full max-w-4xl mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+                <div class="carousel-item active news-item cursor-pointer" 
+                     data-title="Silksong e Hades II Elevam o Prestígio dos Indies no GOTY 2025" 
+                     data-image=img1.jpg 
+                     data-content="<p>A presença de Hollow Knight: Silksong e Hades II na categoria de Jogo do Ano do The Game Awards 2025 marcou um momento decisivo para a indústria dos games independentes. A indicação simultânea de duas sequências tão aguardadas confirma o amadurecimento do mercado indie e reforça sua relevância cultural frente aos grandes blockbusters. Ao figurarem lado a lado com produções multimilionárias, esses títulos demonstram que criatividade e excelência artística têm força suficiente para competir com os maiores estúdios do mundo.</p><p>Nos últimos anos, o cenário independente vinha crescendo, mas 2025 consolidou a ideia de que os indies não apenas disputam espaço — eles podem dominá-lo. A expectativa acumulada por anos por parte dos fãs se transformou em comemoração quando ambas as obras foram oficialmente confirmadas no GOTY. Esse reconhecimento amplia o respeito da indústria para com os estúdios menores, incentivando novos criadores a seguirem caminhos igualmente ambiciosos.</p><p>A tendência, agora, é que essa valorização gere um ciclo positivo: mais visibilidade, mais investimentos e mais inovação. Desenvolvedores independentes passam a se sentir encorajados a apostar em ideias ousadas, enquanto o público se torna cada vez mais receptivo a experiências que fogem do padrão. “Silksong” e “Hades II” podem ter inaugurado um novo capítulo na história dos jogos independentes dentro das grandes premiações.</p>"
+                     data-source="Fonte: Radar Pixel">
+                    <img src=img1.jpg alt="Silksong e Hades II" class="w-full h-64 md:h-96 object-cover">
+                    <div class="absolute bottom-0 left-0 w-full p-4 bg-black bg-opacity-50">
+                        <h3 class="text-white text-2xl font-bold">Silksong e Hades II Elevam o Prestígio dos Indies no GOTY 2025</h3>
+                        <p class="text-white text-sm hidden md:block">A indicação simultânea de duas sequências tão aguardadas confirma o amadurecimento do mercado indie...</p>
+                    </div>
+                </div>
+
+                <div class="carousel-item news-item cursor-pointer"
+                     data-title="Clair Obscur: Expedition 33 Bate Recordes no TGA e Impressiona Críticos"
+                     data-image=img2.jpg 
+                     data-content="<p>O RPG por turnos Clair Obscur: Expedition 33, da Sandfall Interactive, surpreendeu ao se tornar o jogo com o maior número de indicações da história do The Game Awards. Entre as categorias, está o desejado Jogo do Ano, e essa façanha colocou o estúdio francês no radar global. Para uma nova IP alcançar algo tão expressivo logo em sua estreia é um feito raro, e a crítica rapidamente se encantou com sua combinação de narrativa, direção artística e gameplay inovador.</p><p>O destaque do jogo deve-se principalmente à sua estética inspirada no surrealismo francês e ao sistema de combate estilizado que mistura estratégia com fluidez cinematográfica. A recepção extremamente positiva provou que o estúdio não apenas estreou no mercado — ele se consolidou como uma força criativa capaz de competir com grandes franquias. A sensação de novidade e frescor ajudou o jogo a se destacar em um ano repleto de títulos de peso.</p><p>Com tantas indicações, Expedition 33 demonstrou que ainda existe espaço para universos inéditos no mercado atual, frequentemente dominado por sequências, remakes e reboots. O impacto do jogo já inspira outras desenvolvedoras a investir em ideias autorais e ousadas. Para muitos especialistas, a influência de Expedition 33 poderá reverberar nos próximos anos, especialmente dentro do gênero RPG.</p>"
+                     data-source="Fonte: The Game Awards">
+                    <img src=img2.jpg  alt="Clair Obscur" class="w-full h-64 md:h-96 object-cover">
+                    <div class="absolute bottom-0 left-0 w-full p-4 bg-black bg-opacity-50">
+                        <h3 class="text-white text-2xl font-bold">Clair Obscur: Expedition 33 Bate Recordes no TGA</h3>
+                        <p class="text-white text-sm hidden md:block">RPG por turnos da Sandfall Interactive surpreendeu ao se tornar o jogo com o maior número de indicações...</p>
+                    </div>
+                </div>
+
+                <div class="carousel-item news-item cursor-pointer"
+                     data-title="Dispatch Resgata o Formato Episódico e Se Consagra Como Destaque Narrativo de 2025"
+                     data-image=img3.jpg
+                     data-content="<p>O jogo Dispatch, desenvolvido pela AdHoc Studio, tornou-se uma das maiores referências narrativas de 2025. Lançado inicialmente em 22 de outubro e concluído com os episódios 7 e 8 em 12 de novembro, o título rapidamente chamou atenção pela forma como combina comédia, estratégia e elementos de super-heróis de forma leve e envolvente. Seu formato episódico, considerado arriscado nos últimos anos, voltou aos holofotes graças ao sucesso inesperado do projeto.</p><p>Cada novo episódio expandiu a trama de maneira orgânica, mantendo a comunidade ativa e ansiosa pelas próximas revelações. A estrutura seriada aproximou o jogo de séries televisivas, gerando debates semanais e fortalecendo o vínculo entre o público e os personagens. A abordagem permitiu ritmo narrativo mais preciso, além de liberdade criativa para explorar situações absurdas e cômicas.</p><p>Ao final de sua temporada, Dispatch já era considerado por muitos críticos como o melhor jogo narrativo do ano. Esse sucesso reacendeu o interesse no formato episódico, que pode retornar com força na indústria se mais estúdios interpretarem o resultado do jogo como um sinal positivo. Com isso, 2025 pode ter marcado o ressurgimento de um modelo que, quando bem utilizado, oferece experiências únicas.</p>"
+                     data-source="Fonte: AdHoc Studio">
+                    <img src=img3.jpg alt="Dispatch" class="w-full h-64 md:h-96 object-cover">
+                    <div class="absolute bottom-0 left-0 w-full p-4 bg-black bg-opacity-50">
+                        <h3 class="text-white text-2xl font-bold">Dispatch Resgata o Formato Episódico e Se Consagra</h3>
+                        <p class="text-white text-sm hidden md:block">Título da AdHoc Studio tornou-se uma das maiores referências narrativas de 2025...</p>
+                    </div>
+                </div>
+
+                <button id="prevBtn" class="absolute top-1/2 left-4 -translate-y-1/2 bg-white/30 hover:bg-white/50 text-gray-800 p-2 rounded-full z-10">
+                    &#10094;
+                </button>
+                <button id="nextBtn" class="absolute top-1/2 right-4 -translate-y-1/2 bg-white/30 hover:bg-white/50 text-gray-800 p-2 rounded-full z-10">
+                    &#10095;
+                </button>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="text-2xl font-bold mb-4">Últimas Notícias</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <div class="news-item bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden cursor-pointer hover:shadow-xl transition-shadow duration-300"
+                     data-title="A Convergência Entre Consoles e PCs Está Redefinindo o Mercado de Games"
+                     data-image=img5.jpg "
+                     data-content="<p>Nos últimos anos, a relação entre consoles e PCs passou por mudanças profundas, e hoje a tendência é clara: ambos caminham rumo à convergência. A adoção de arquiteturas x86/64 nos consoles modernos aproximou suas capacidades técnicas das dos computadores, facilitando desenvolvimento, otimização e portabilidade. Como resultado, a competição tradicional entre “PC vs. console” está cedendo espaço para um ecossistema mais integrado e orientado a serviços.</p><p>Plataformas como Xbox Game Pass, PS Plus e sistemas de Cloud Gaming mostraram que jogadores buscam cada vez mais flexibilidade. A possibilidade de jogar em dispositivos diferentes, manter progresso salvo na nuvem e acessar catálogos variados tornou-se mais importante do que o hardware específico. Essa tendência também influenciou a migração de exclusivos de console para o PC, ampliando o alcance dos estúdios e fortalecendo a visão multiplataforma.</p><p>Apesar disso, consoles ainda possuem papel importante no mercado. Enquanto o PC se destaca pela liberdade de customização e poder bruto, o console permanece como a opção de melhor custo-benefício, oferecendo praticidade e acessibilidade. O futuro aponta não para o fim dos consoles, mas para sua transformação em dispositivos mais abertos e conectados — hubs de serviços que priorizam a experiência do usuário acima do hardware.</p>"
+                     data-source="Fonte: Análise Radar Pixel">
+                    <img src=img5.jpg alt="img1.jpg" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">A Convergência Entre Consoles e PCs Está Redefinindo o Mercado</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">A competição "PC vs. console" está cedendo espaço para um ecossistema mais integrado.</p>
+                    </div>
+                </div>
+
+                <div class="news-item bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden cursor-pointer hover:shadow-xl transition-shadow duration-300"
+                     data-title="Hades II Expande o Universo Mitológico com Nova Protagonista e Mecânicas Aprimoradas"
+                     data-image=img4.jpg 
+                     data-content="<p>A sequência Hades II, da Supergiant Games, aprofunda o universo mitológico apresentado no primeiro jogo, desta vez colocando o jogador na pele de Melinoë, filha de Hades e poderosa bruxa. A história gira em torno da fuga de Chronos, o Titã do Tempo, que se tornou uma ameaça existencial a todos os reinos. Com essa premissa, o jogo ganha um tom mais sombrio e épico, oferecendo uma narrativa repleta de conflitos familiares, magia e mitologia.</p><p>O título amplia todos os principais sistemas de jogabilidade que fizeram do primeiro Hades um sucesso mundial. O combate frenético permanece central, mas agora incorpora elementos de feitiçaria e magia negra, graças ao novo sistema Altar Arcano, que dá ao jogador liberdade para personalizar builds de maneira profunda. A presença de novos deuses, como Apolo, torna a progressão ainda mais interessante, ampliando o leque de interações e poderes disponíveis.</p><p>Visualmente, Hades II mantém o estilo artístico marcante da Supergiant, mas com cenários mais amplos, sombrios e ricos em detalhes. A promessa de rejogabilidade infinita se mantém firme, especialmente graças à variedade de ambientes e inimigos que tornam cada tentativa única. Combinando história envolvente e gameplay refinado, o jogo se posiciona como um dos maiores lançamentos da nova geração de roguelikes.</p>"
+                     data-source="Fonte: Supergiant Games">
+                    <img src=img4.jpg alt="img2.jpg" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">Hades II Expande o Universo Mitológico com Nova Protagonista</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">Jogo coloca o jogador na pele de Melinoë, filha de Hades e poderosa bruxa.</p>
+                    </div>
+                </div>
+
+                <div class="news-item bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden cursor-pointer hover:shadow-xl transition-shadow duration-300"
+                     data-title="Rumores Sobre Novo “Sex with Hitler” Apontam Possível Ambientação Medieval em 2026"
+                     data-image=img8.jpg
+                     data-content="<p>A polêmica franquia Sex with Hitler está há anos sem novidades, mas rumores recentes sugerem que um novo título pode estar a caminho. Informações que circulam em comunidades pequenas e fóruns indicam que o anúncio poderia ocorrer em março de 2026, reacendendo o interesse em uma série conhecida por sua abordagem satírica e provocadora. Embora não haja qualquer confirmação oficial, a simples possibilidade já gerou discussões entre fãs.</p><p>Os boatos afirmam que, diferente dos jogos anteriores, o novo capítulo se passaria em uma época medieval, mudança drástica em relação aos cenários futuristas e históricos que marcaram a franquia. Essa mudança, caso se concretize, exigiria um reposicionamento criativo dos desenvolvedores, abrindo portas para novas paródias, referências e personagens absurdos. A ideia intrigou os seguidores da série, que especulam como essa ambientação poderia ser adaptada ao estilo característico da franquia.</p><p>Até agora, nenhum estúdio envolvido nos títulos anteriores se manifestou sobre os rumores. Sem anúncios oficiais, trailers, teasers ou vazamentos confiáveis, tudo permanece no campo da especulação. Ainda assim, a conversa continua ativa e demonstra como essa série, apesar de controversa, mantém um nicho de fãs atento e curioso sobre o futuro da marca.</p>"
+                     data-source="Fonte: Fóruns da Comunidade">
+                    <img src=img8.jpg alt="img3.jpg" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">Rumores Sobre Novo “Sex with Hitler” Apontam Ambientação Medieval</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">Informações que circulam em fóruns indicam que o anúncio poderia ocorrer em março de 2026.</p>
+                    </div>
+                </div>
+
+                <div class="news-item bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden cursor-pointer hover:shadow-xl transition-shadow duration-300"
+                     data-title="Rumores Apontam “Revolução” em Nova Edição de Franquia de RPG"
+                     data-image=img7.jpg
+                     data-content="<p>Comentários recentes em redes sociais sugerem que uma famosa franquia de RPG estaria prestes a ganhar uma edição revolucionária em 2026. Supostas “fontes próximas ao estúdio” afirmam que o jogo contaria com gráficos de ponta, um mundo aberto gigantesco e mecânicas de combate inéditas. Embora empolgantes, essas informações carecem totalmente de confirmação, o que coloca em dúvida sua veracidade.</p><p>Além disso, os rumores incluem elementos extremamente ambiciosos, como escolhas narrativas profundas com consequências irreversíveis e até integração com realidade aumentada. Para muitos jogadores, essas descrições parecem mais um desejo coletivo do que um projeto real em andamento. A discussão se espalhou com rapidez, impulsionada pela falta de anúncios oficiais sobre a franquia nos últimos anos.</p><p>O fator que mais prejudica a credibilidade dos rumores, no entanto, é a suposta fonte: “Gerson, meu vizinho”. A referência informal se tornou motivo de piada entre os internautas, transformando o boato em meme. Assim, apesar da empolgação e das teorias, tudo indica que essa história não passa de especulação informal amplificada pela comunidade.</p>"
+                     data-source="Fonte: Gerson, meu vizinho">
+                    <img src=img7.jpg alt="img4.jpg" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">Rumor: “Revolução” em Franquia de RPG</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">algumas “fontes próximas ao estúdio” afirmam que o jogo contaria com gráficos de ponta...</p>
+                    </div>
+                </div>
+
+                <div class="news-item bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden cursor-pointer hover:shadow-xl transition-shadow duration-300"
+                     data-title="Rumor do “Jogo Mais Revolucionário da História” Surge com força"
+                     data-image=img6.jpg 
+                     data-content="<p>Outro rumor igualmente improvável tomou força nos últimos dias: o suposto lançamento, em 2026, de um jogo considerado por alguns como o mais revolucionário da história dos videogames. Segundo as descrições, o título apresentaria gráficos ultrarrealistas, IA que se adapta completamente ao estilo do jogador, missões que nunca se repetem e um mundo aberto totalmente dinâmico. A magnitude das promessas fez muitos duvidarem de sua autenticidade assim que o boato surgiu.</p><p>A ideia de um jogo capaz de se transformar constantemente com base nas escolhas do jogador parece mais saída de uma obra de ficção do que de um projeto real e executável com a tecnologia atual. Ainda assim, o rumor ganhou força rapidamente, alimentado por discussões em fóruns e vídeos que especulam como seria um game com tais características. Mesmo sem qualquer prova ou indício concreto, a imaginação dos fãs deu vida a teorias elaboradas sobre o suposto projeto.</p><p>No entanto, a revelação da fonte do rumor deixou tudo ainda mais claro: a informação teria sido fornecida por “uma criança de 9 anos chamada João Victor, encontrada na padaria”. Naturalmente, isso transforma toda a história em anedota e elimina qualquer credibilidade do boato. Apesar disso, a especulação segue circulando como uma curiosidade divertida entre os jogadores.</p>"
+                     data-source="Fonte: João Victor, 9 anos (na padaria)">
+                    <img src=img6.jpg  alt="img5.jpg" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">Rumor do “Jogo Mais Revolucionário da História” Surge com força</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">Título apresentaria gráficos ultrarrealistas e IA que se adapta ao jogador...</p>
+                    </div>
+                </div>
+
+              <div class="news-item bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden cursor-pointer hover:shadow-xl transition-shadow duration-300"
+     data-title="Caos na Votação: Site do The Game Awards 2025 Colapsa Após Abertura"
+     data-image="img9.jpg" 
+     data-content="<p>O lançamento das votações para o prestigiado prêmio de Jogo do Ano (GOTY) no The Game Awards 2025 foi marcado por um colapso digital. O site oficial do evento, a principal plataforma para os fãs votarem em seus títulos favoritos, sucumbiu à massiva demanda de tráfego poucas horas após a revelação dos indicados e a abertura dos votos. Milhões de jogadores ao redor do mundo, ansiosos para conferir a lista completa de nomeações e participar da escolha do vencedor, foram recebidos com telas de erro, lentidão e instabilidade, impedindo a visualização das categorias e a efetivação dos votos.</p><p>A falha técnica gerou uma imediata onda de frustração na comunidade gamer, que rapidamente migrou para as redes sociais para expressar seu descontentamento. Usuários relataram problemas como o site não carregar, erros de 'rate-limit' (limite de requisições) e até mesmo banimentos temporários de IP ao tentar votar repetidamente. Críticas diretas ao desenvolvedor e apresentador do evento, Geoff Keighley, e à infraestrutura do site dominaram plataformas como o X (antigo Twitter) e o Reddit, evidenciando o quão despreparada a plataforma se mostrou para o pico de acesso gerado por um dos eventos mais importantes da indústria.</p><p>Embora a instabilidade sugira que a plataforma não estava dimensionada para suportar a demanda inicial do público global, o incidente acabou por sublinhar a enorme relevância e o alcance global do The Game Awards. A votação popular é um componente crucial, respondendo por 10% da nota final para a escolha dos vencedores. A organização não tardou a reconhecer o problema e trabalhou para restabelecer a estabilidade, na tentativa de garantir que todos os fãs tenham a oportunidade de participar da votação antes do evento, marcado para dezembro.</p>"
+     data-source="Fonte: radar pixel">
+    
+    <img src="img9.jpg"Imagem de erro de site ou tela de votação do GOTY" class="w-full h-48 object-cover">
+    
+    <div class="p-4">
+        <h3 class="font-bold text-lg mb-2">Caos na Votação: Site do The Game Awards 2025 Colapsa Após Abertura</h3>
+        <p class="text-sm text-gray-600 dark:text-gray-400">Plataforma oficial do GOTY sucumbe à demanda de tráfego horas após a revelação dos indicados.</p>
+    </div>
+</div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="newsModal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center p-4 z-50 hidden">
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto relative">
+            <button id="closeModalBtn" class="absolute top-4 right-4 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white text-3xl font-bold">&times;</button>
+            
+            <img id="modalImage" src="" alt="Imagem da Notícia" class="w-full h-64 object-cover rounded-t-lg">
+            <div class="p-6">
+                <h2 id="modalTitle" class="text-3xl font-bold mb-4"></h2>
+                <div id="modalContent" class="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed"></div>
+                <p id="modalSource" class="text-sm text-gray-500 dark:text-gray-400 italic"></p>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // --- LÓGICA DO CARROSSEL ---
+            const carouselItems = document.querySelectorAll('.carousel-item');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            let currentSlide = 0;
+            const totalSlides = carouselItems.length;
+
+            function showSlide(index) {
+                // Esconde todos os slides
+                carouselItems.forEach(item => {
+                    item.classList.remove('active');
+                    item.style.opacity = '0';
+                });
+                
+                // Garante que o índice seja cíclico
+                if (index >= totalSlides) {
+                    currentSlide = 0;
+                } else if (index < 0) {
+                    currentSlide = totalSlides - 1;
+                } else {
+                    currentSlide = index;
+                }
+                
+                // Mostra o slide correto com fade-in
+                carouselItems[currentSlide].classList.add('active');
+                setTimeout(() => {
+                    carouselItems[currentSlide].style.opacity = '1';
+                }, 50); // Pequeno delay para garantir que a transição CSS funcione
+            }
+
+            // Event Listeners dos botões
+            prevBtn.addEventListener('click', () => {
+                showSlide(currentSlide - 1);
+            });
+
+            nextBtn.addEventListener('click', () => {
+                showSlide(currentSlide + 1);
+            });
+
+            // Inicia o carrossel
+            showSlide(currentSlide);
+            
+            // Troca automática de slides (opcional)
+            let slideInterval = setInterval(() => {
+                showSlide(currentSlide + 1);
+            }, 5000); // Muda a cada 5 segundos
+
+            // --- LÓGICA DO MODAL ---
+            const modal = document.getElementById('newsModal');
+            const closeModalBtn = document.getElementById('closeModalBtn');
+            const newsItems = document.querySelectorAll('.news-item'); // Seleciona tanto os cards quanto os slides do carrossel
+
+            // Elementos do Modal
+            const modalImage = document.getElementById('modalImage');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalContent = document.getElementById('modalContent');
+            const modalSource = document.getElementById('modalSource');
+
+            function openModal(item) {
+                // Pega os dados do item clicado usando atributos 'data-'
+                const title = item.getAttribute('data-title');
+                const image = item.getAttribute('data-image');
+                const content = item.getAttribute('data-content');
+                const source = item.getAttribute('data-source');
+
+                // Preenche o modal com os dados
+                modalImage.src = image;
+                modalTitle.textContent = title;
+                // *** MUDANÇA IMPORTANTE: Usei .innerHTML para renderizar os parágrafos ***
+                modalContent.innerHTML = content; 
+                modalSource.textContent = source;
+
+                // Mostra o modal
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden'; // Impede o scroll da página principal
+                
+                // Pausa o carrossel
+                clearInterval(slideInterval);
+            }
+
+            function closeModal() {
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto'; // Libera o scroll
+                
+                // Reinicia o carrossel
+                slideInterval = setInterval(() => {
+                    showSlide(currentSlide + 1);
+                }, 5000);
+            }
+
+            // Adiciona o evento de clique a todos os cards e slides
+            newsItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    openModal(item);
+                });
+            });
+
+            // Evento para fechar o modal
+            closeModalBtn.addEventListener('click', closeModal);
+            
+            // Evento para fechar clicando fora do conteúdo (no overlay)
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
